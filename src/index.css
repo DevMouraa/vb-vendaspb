@@ -1,0 +1,68 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 30% 98%;
+    --foreground: 20 10% 15%;
+
+    --card: 36 30% 97%;
+    --card-foreground: 20 10% 15%;
+
+    --popover: 36 30% 98%;
+    --popover-foreground: 20 10% 15%;
+
+    --primary: 36 42% 80%;
+    --primary-foreground: 20 10% 10%;
+
+    --secondary: 20 10% 10%;
+    --secondary-foreground: 36 42% 95%;
+
+    --muted: 36 20% 90%;
+    --muted-foreground: 20 10% 40%;
+
+    --accent: 36 42% 85%;
+    --accent-foreground: 20 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 36 42% 95%;
+
+    --border: 36 30% 80%;
+    --input: 36 30% 80%;
+    --ring: 20 10% 40%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-[1.02];
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
+  }
+  
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+  }
+  
+  .animate-on-scroll.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+}
